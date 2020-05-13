@@ -33,7 +33,7 @@
       v-model="textX"
       type="range"
       min="0"
-      max="300"
+      max="500"
     ></b-form-input>
     <label for="range-1">Position Y</label>
     <div class="mt-2">Value: {{ textY }}</div>
@@ -42,14 +42,14 @@
       v-model="textY"
       type="range"
       min="0"
-      max="350"
+      max="500"
     ></b-form-input>
     <b-button @click="download" variant="success">Download</b-button>
   </div>
 </template>
 
 <script>
-import { saveAsPng } from "save-html-as-image";
+import { saveAsJpeg } from "save-html-as-image";
 export default {
   name: "Gallery",
   props: {
@@ -87,7 +87,7 @@ export default {
   methods: {
     download() {
       const node = this.$refs.download;
-      saveAsPng(node, { filename: "meme", printDate: false });
+      saveAsJpeg(node, { filename: "meme", printDate: false });
     }
   }
 };
